@@ -1,0 +1,167 @@
+.dropdown-toggle, .dropdown-item, .pointer {
+    cursor: pointer;
+  }
+
+.dropdown{
+    display: none;
+}
+
+.navbar{
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.container{
+    display: inline;
+}
+
+.navbar-brand img{
+    width: 45%;
+    position: relative;
+    float: right;
+    margin-right: 55%;
+    
+    
+}
+
+.nav-item a{
+    display: inline;
+    padding: 20px;
+    font-size: 17px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+
+.navbar-nav{
+    float: right;
+    margin-top: 2.3%;
+}
+
+a:link { text-decoration: none; }
+
+
+  
+  .label {
+    font-size: .125rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: +1.3px;
+    margin-bottom: 1rem;
+  }
+  
+  .searchBar {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    margin-top: 1.3%;
+    margin-left: 1%;
+  }
+  
+  #searchQueryInput {
+    width:40%;
+    height: 2.1rem;
+    background: #f5f5f5;
+    outline: none;
+    border: none;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    font-size: 1rem;
+  }
+  
+  #searchQuerySubmit {
+    width: 1.8rem;
+    height: 2.8rem;
+    margin-left: -3.5rem;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  #searchQuerySubmit:hover {
+    cursor: pointer;
+  }
+
+ .fa-user-circle{
+  width: 18px;
+ }
+
+ 
+ .fa{
+    color: black;
+ }
+
+ ul li :hover{
+    color: green;
+ }
+
+ @media screen and (max-width: 770px){
+    .dropdown{
+        top: -5rem;
+    }
+    
+ }
+
+ @media screen and (max-width: 1000px){
+    .navbar{
+    display:flex;
+   } 
+   
+   .searchBar{  
+    position: relative;
+    width: auto;  
+    float: left;
+    flex-basis: 100px;
+
+    }
+    #searchQueryInput {
+        width: 60%;
+    }
+    img{
+    float: left;
+    flex-basis: 100px;
+
+   }
+ 
+
+   .navbar-nav{
+    position: absolute;
+    display: inline-flex;
+    top: 45%;
+    
+   }
+  .navbar-nav li{
+    position: relative;
+    display: inline;
+    width: 100%;
+    float: right;
+    left: 0;
+    padding: 1%;
+
+  }
+  .dropdown{
+    position: absolute;
+   }
+
+
+ }
+
+ @media screen and (max-width: 1400px){
+    .navbar-nav{
+         display: none;
+    }
+    .dropdown{
+    display: inline;
+   }
+   .dropdown{
+    font-size: 23px;
+    float: right;
+    padding-right: 0;
+    position: relative;
+    margin-top: 3%;
+   }
+ }

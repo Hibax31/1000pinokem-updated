@@ -1,0 +1,76 @@
+<body>
+  
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container" >
+		<form action="#"  [formGroup]="registerForm" (ngSubmit)="register()">
+			<h1>Create Account</h1>
+	
+      <input [class.is-invalid]="registerForm.get('email')?.errors && registerForm.get('email')?.touched"
+      type="email" class="form-control" formControlName="email" placeholder="Email" value="email">
+      <div *ngIf="registerForm.get('email')?.hasError('required')" class="invalid-feedback">Please enter an email</div>
+      <div *ngIf="registerForm.get('email')?.hasError('minlength')" class="invalid-feedback">Email must be at least 4 characters</div>
+      <div *ngIf="registerForm.get('email')?.hasError('maxlength')" class="invalid-feedback">Email max length is 30 characters</div>
+      <div *ngIf="registerForm.get('email')?.hasError('email')" class="invalid-feedback">Please enter an email</div>
+   
+      <input [class.is-invalid]="registerForm.get('username')?.errors && registerForm.get('username')?.touched"
+      type="text" class="form-control" formControlName="username"  placeholder="Username">
+
+      <div *ngIf="registerForm.get('username')?.hasError('required')" class="invalid-feedback">Please enter a username</div>
+      <div *ngIf="registerForm.get('username')?.hasError('minlength')" class="invalid-feedback">Username must be at least 4 characters</div>
+      <div *ngIf="registerForm.get('username')?.hasError('maxlength')" class="invalid-feedback">Username max length is 10 characters</div>
+   
+      
+      <input [class.is-invalid]="registerForm.get('city')?.errors && registerForm.get('city')?.touched"
+      type="text" class="form-control" formControlName="city" placeholder="City">
+
+      <div *ngIf="registerForm.get('city')?.hasError('required')" class="invalid-feedback">Please enter a city</div>
+      <div *ngIf="registerForm.get('city')?.hasError('minlength')" class="invalid-feedback">City must be at least 4 characters</div>
+      <div *ngIf="registerForm.get('city')?.hasError('maxlength')" class="invalid-feedback">City max length is 10 characters</div>
+
+
+      <input [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
+      type="password" class="form-control" formControlName="password" placeholder="Password">
+
+      <div *ngIf="registerForm.get('password')?.hasError('required')" class="invalid-feedback">Please enter a password</div>
+      <div *ngIf="registerForm.get('password')?.hasError('minlength')" class="invalid-feedback">Password must be at least 4 characters</div>
+      <div *ngIf="registerForm.get('password')?.hasError('maxlength')" class="invalid-feedback">password max length is 10 characters</div>
+  
+      <input [class.is-invalid]="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched"
+            type="password"class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
+
+            <div *ngIf="registerForm.get('confirmPassword')?.hasError('isMatching')" class="invalid-feedback">Passwords do not match</div>
+        
+        
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		
+    <form  #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()"
+      autocomplete="off">
+      <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text"
+        placeholder="Username">
+      <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password"
+        placeholder="Password">
+
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp" (click)="switch()">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
